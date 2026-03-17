@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mts medico-dentaire</title>
+    <link rel="stylesheet" href="style1.css ">
+</head>
+<body>
+    <header id="home">
+        <nav class="navbar">
+            <h1> MTS medico-dentaire</h1>
+            <ul>
+                <li> <a href="#home">acceuil</a></li>
+                <li> <a href="#about">a propos</a></li>
+                <li> <a href="#service">service</a></li>
+                <li> <a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+
+
+    </header> 
+    <main>
+        <section id="contact">
+            <h2>contactez-nous</h2>
+            <form class="contact-form">
+             <label for="name">nom:</label>
+             <input type="text" id="name" name="name" required>
+             <label for="email">email:</label>
+             <input type="email" id="email" name="email" required>
+             <label for="message">message:</label>
+             <textarea name="message" id="message" rows="5" required></textarea>
+             <label >type de demande</label>
+             <div class="radio-groupe">
+                <input type="radio" id="formation" name="type" value="formation" checked>
+                <label for="formation">formation</label>
+                 <input type="radio" id="partenariats" name="type" value="partenariats" >
+                <label for="partenariats">partenariats</label>
+              </div>
+             <label class="checkbox">
+                <input type="checkbox" required>
+                jaccepte que mes donnees soient utilisees pour me recontacter
+             </label>
+             <button type="submit">envoyer</button>
+            </form>
+        </section>
+    </main> 
+     <footer>
+        <p>&copy;2025 médico-dentaires.tout droit reserves</p>
+    </footer>
+    
+</body>
+</html>
