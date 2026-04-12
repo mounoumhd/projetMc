@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Panier</title>
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<h1>Votre Panier 🛒</h1>
+
+<div id="cart-items"></div>
+<h2 id="total"></h2>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const container = document.getElementById("cart-items");
+let total = 0;
+
+cart.forEach(item => {
+    total += item.price * item.qty;
+
+    container.innerHTML += `
+        <div class="cart-item">
+            <h3>${item.name}</h3>
+            <p>Prix: ${item.price} DA</p>
+            <p>Quantité: ${item.qty}</p>
+            <p>Total: ${item.price * item.qty} DA</p>
+        </div>
+        <hr>
+    `;
+});
+
+document.getElementById("total").innerText = "Total général : " + total + " DA";
+</script>
+
+</body>
+
+</html>

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mts medico-dentaire</title>
-    <link rel="stylesheet" href="style1.css ">
+    <link rel="stylesheet" href="contact.css ">
 </head>
 <body>
     <header id="home">
         <nav class="navbar">
             <h1> MTS medico-dentaire</h1>
             <ul>
-                <li> <a href="#home">acceuil</a></li>
-                <li> <a href="#about">a propos</a></li>
-                <li> <a href="#service">service</a></li>
+                <li> <a href="index1.html">acceuil</a></li>
+                <li> <a href="apropos.html">a propos</a></li>
+                <li> <a href="services.html">service</a></li>
                 <li> <a href="contact.html">contact</a></li>
             </ul>
         </nav>
@@ -21,6 +21,7 @@
 
     </header> 
     <main>
+        <div class="contact-info"></div>
         <section id="contact">
             <h2>contactez-nous</h2>
             <form class="contact-form">
@@ -30,12 +31,12 @@
              <input type="email" id="email" name="email" required>
              <label for="message">message:</label>
              <textarea name="message" id="message" rows="5" required></textarea>
-             <label >type de demande</label>
+             <label >Vous etes :</label>
              <div class="radio-groupe">
-                <input type="radio" id="formation" name="type" value="formation" checked>
-                <label for="formation">formation</label>
-                 <input type="radio" id="partenariats" name="type" value="partenariats" >
-                <label for="partenariats">partenariats</label>
+                <input type="radio" id="dentiste" name="type" value="dentiste" checked>
+                <label for="dentiste">Dentiste</label>
+                 <input type="radio" id="autres" name="type" value="autres" >
+                <label for="autres">Autres</label>
               </div>
              <label class="checkbox">
                 <input type="checkbox" required>
@@ -44,6 +45,7 @@
              <button type="submit">envoyer</button>
             </form>
         </section>
+        
     </main> 
      <footer>
         <p>&copy;2025 médico-dentaires.tout droit reserves</p>

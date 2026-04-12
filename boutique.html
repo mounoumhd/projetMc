@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="style1.css">
+<section id="boutique" class="products">
+  <h2>Nos Produits</h2>
+  <div class="product-container" id="product-list"></div>
+</section>
+<script>
+const products = [
+  {name: "Turbine dentaire", price: 25000},
+  {name: "Contre-angle", price: 18000},
+  {name: "Micromoteur", price: 30000},
+  {name: "Lampe à polymériser", price: 12000},
+  {name: "Scaler ultrasonique", price: 22000},
+  {name: "Autoclave", price: 85000},
+  {name: "Gants médicaux", price: 1200},
+  {name: "Masques chirurgicaux", price: 800},
+  {name: "Composite dentaire", price: 6000},
+  {name: "Ciment dentaire", price: 4500},
+  {name: "Fil de suture", price: 1500},
+  {name: "Miroir dentaire", price: 600},
+  {name: "Pince dentaire", price: 1800},
+  {name: "Alginate", price: 2500},
+  {name: "Silicone d’empreinte", price: 7000}
+];
+
+const container = document.getElementById("product-list");
+
+products.forEach((product, index) => {
+  const card = document.createElement("div");
+  card.classList.add("product-card");
+
+  card.innerHTML = `
+    <img src="https://via.placeholder.com/250x180" alt="${product.name}">
+    <h3>${product.name}</h3>
+    <p class="price">${product.price} DA</p>
+
+    <label>Quantité :</label>
+    <input type="number" min="1" value="1" id="qty-${index}">
+
+    <button onclick="addToCart('${product.name}', ${index})">
+      Ajouter au panier 🛒
+    </button>
+  `;
+
+  container.appendChild(card);
+});
+
+function addToCart(name, index) {
+  const qty = document.getElementById(`qty-${index}`).value;
+  alert(qty + " x " + name + " ajouté au panier !");
+}
+</script>
+<button onclick="addToCart('${product.name}', ${product.price}, ${index})">
+  Ajouter au panier 🛒
+</button>
+<script>
+function addToCart(name, price, index) {
+    const qty = document.getElementById(`qty-${index}`).value;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Vérifier si produit existe déjà
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.qty += parseInt(qty);
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            qty: parseInt(qty)
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Produit ajouté au panier 🛒");
+}
+</script>
